@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Demo tạo form </title>
+    <style>
+        body{
+            background-color: #fffcad;
+        }
+        .tilte-form{
+            color: blue;
+            background-color: aliceblue;
+            text-align: center;
+        }
+        .registerContent {
+            background-color: white;
+        }  
+        .leftCol{
+            color: #2a42b7;
+            text-align: right;
+        }
+        .rightCol{
+            color: #ff854e;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title-form">SỞ THÍCH CỦA BẠN</h2>
+    <form action="Register.php" class="Register">
+        <table class="registerContent" cellpadding="5px" cellspacing="5px" >
+            <tr>
+                <th colspan="2" style="background-color: #ff4a00; color: white;">SỞ THÍCH CỦA BẠN</th>
+            </tr>
+            <tr>
+                <td class="leftCol">Họ và tên 
+                </td>
+                <td class="rightCol"><input type="text" name="yourname" placeholder="Nhập họ tên">
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">Email 
+                </td>
+                <td class="rightCol"><input type="email" name="email" placeholder="Nhập email">
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">Sở thích 
+                </td>
+                <td class="rightCol">
+                    <table class="tbl_con">
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="hobby" name="hobby" value="1">Thể thao
+                            </td>
+                            <td>
+                                <input type="checkbox" id="hobby" name="hobby" value="2">Âm nhạc
+                            </td>
+                            <td>
+                                <input type="checkbox" id="hobby" name="hobby" value="3">Đọc sách
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="hobby" name="hobby" value="4">Lướt web
+                            </td>
+                            <td>
+                                <input type="checkbox" id="hobby" name="hobby" value="5">Chơi game
+                            </td>
+                            <td>
+                                <input type="checkbox" id="hobby" name="hobby" value="6">Điện ảnh
+                            </td>
+                        </tr>
+                            <td>
+                                <input type="checkbox" id="hobby" name="hobby" value="7">Du lịch
+                            </td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                </td>
+                <td class="rightCol"><button type="submit" class="submit" name="SubmitForm">Gửi thông tin</button>
+                <button type="reset" class="reset" name="ResetForm">Nhập lại</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

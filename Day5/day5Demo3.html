@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Demo js </title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        //Kiểu dữ liệu (data type) kiểu "A" là kiểu string, Kiểu 'a' là kiểu ký tự charactor
+        //Khi khai báo biến thì xác định luôn kiểu dữ liệu
+        //VD như này x sẽ là số nguyên
+        var x = 10;
+        //Chuỗi là các ký tự ở trong dấu " "
+        var x = "ABC";
+        //Chuỗi có giá trị thì được hiểu là "TRUE", không có giá trị được hiểu là "False"
+        // VD dưới đây là True, vì khai báo giá trị a là kiểu số, có giá trị là 10
+        let a = 10;
+        console.log(Boolean(a))
+        // Phân biệt giữa let và var
+        // khác nhau bởi phạm vi sử dụng. 
+        // var" -->Trình biên dịch sẽ chạy trên toàn bộ file. Vì đã khai báo và sử dụng chung. Nên khai báo 1 lần dùng nhiều lần
+        // let --> trình biên dịch sẽ hiểu chỉ chạy ở trong block đó thôi. sang chỗ khác mà cần thì sẽ khai báo lại bằng biết let.
+        //VD
+        let b = 10;  //Gán b = 10
+        var c = 10; // Khai báo b = 10, 
+        var c; // Tương đương với ở trên, ở đây khai báo biến c, xuonsg dưới gán cho C =10
+        c = 10
+        //Toán tử
+        let z = -2
+        console.log(z++)
+        console.log(++z)
+        // ++b tăng giá trị cho z thêm 1 đơn vị rồi trả về b
+        // b++  trả về giá trị của x rồi cộng thêm 1
+        console.log(c%7); // C chia 7 dư 3, hiển thị phần dư là 3
+        //Toán tử gán gồm:
+        //    =
+        //   +=
+        //   -=
+        //   /=
+        //   *=
+        let number = 6;
+        let str = 10+"10"
+        console.log(number+=3); // number = number+3 ==> log = 9
+        //Toán tử so sánh
+
+        //VD
+        console.log(c==b) // kiểm tra xem c có bằng b hay không, nếu trả về kết quả sẽ là kiểu boolean,(true,false)
+        console.log(number==b) //tuy cùng là 10, nhưng kiểu dữ liệu khác nhau nên không thể bằng nhau được
+        console.log(typeof(str))
+        
+        let d=6
+        console.log(d=="6")
+
+    </script> 
+</body>
+</html>

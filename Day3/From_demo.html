@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Chrome">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title>Demo tạo form </title>
+        <style>
+            {
+                .register
+            }
+        </style>
+    </head>
+    <body>
+        <div> 
+            <h2> Tạo form cho demo buổi 3</h2>
+        <!-- Action là khi submit sẽ gửi đến trang nào-->
+            <form class="register_form" action="form.php">
+                <p>Tên tài khoản</p>
+                <input type="text" name="username" placeholder="Nhập tên tài khoản">
+                <p>Mật khẩu</p>
+                <input type="password" name="password" placeholder="Nhập mật khẩu">
+                <p>Địa chỉ email</p>
+                <input type="email" name="email" placeholder="Nhập email">
+                <p>Giới tính</p>
+                <input type="radio" name="Nam" value="Nam giới">Nam <br/>
+                <input type="radio" name="Nu" value="Nữ giới">Nữ <br/>
+                <input type="radio" name="Other" value="Bí mật">Bí mật <br/>
+                <p>Địa điểm</p>
+                <input type="checkbox" name="add1" value="add1">Hà Nội<br/>
+                <input type="checkbox" name="add2" value="add2">Đà Nẵng<br/>
+                <input type="checkbox" name="add3" value="add3">Sài Gòn<br/>
+                <!-- Dropdown-->
+                <p>Địa điểm dạng danh sách lựa chọn</p>
+                <select name="province" id="province">
+                    <option value="Blank"></option>
+                    <option value="Hanoi">Hà Nội</option>
+                    <option value="Danang">Đà Nẵng</option>
+                    <option value="Saigon">Sài Gòn</option>
+                    <option value="Camau">Cà Mau</option>
+                </select>
+                <!--Danh sách nhân viên dạng table-->
+                <p>Danh sách nhân viên dạng table</p>
+                <table class="ws-table" id="customerList" style="border: 1px; color: blueviolet;">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Họ tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Lớp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Phương Nghi</td>
+                            <td>01/01/2002</td>
+                            <td rowspan="2" >Lomonoxop</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Tường An</td>
+                            <td>05/10/2002</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Lớp IT basic</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <br />
+                <button type="submit" name="submit">Gửi thông tin</button>
+                <button type="reset" name="reset">Nhập lại</button>
+             </form>
+        </div>
+    </body>
+</html>

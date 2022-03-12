@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Day4bai5_form2</title>
+    <style>
+        body{
+            background-color: #fffda8;
+        }
+        .registerContent {
+            background-color: white;
+        }  
+        .leftCol{
+            color: #1e37aa;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <form action="Register.php" class="Register">
+        <table class="registerContent" cellpadding="5px" cellspacing="5px" >
+            <tr>
+                <th colspan="2" style="background-color: #d3fed6; color: #0433ff; text-align: left;">ĐĂNG KÝ HỌC VIÊN</th>
+            </tr>
+            <tr>
+                <td class="leftCol">Họ và tên 
+                </td>
+                <td class="rightCol"><input type="text" name="yourname">
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">Ngày sinh
+                </td>
+                <td class="rightCol"><input type="date" name="birthday">
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">Giới tính
+                </td>
+                <td class="rightCol">
+                    <input type="radio" name="gender" value="0">Nam
+                    <input type="radio" name="gender" value="1">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">Địa chỉ
+                </td>
+                <td class="rightCol">
+                    <textarea id="address" name="address" rows="4" cols="30" ></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">Lớp
+                </td>
+                <td class="rightCol">
+                    <select name="sv-class" id="sv-class">
+                        <option value="">--Chọn lớp--</option>
+                        <option value="PF0222">PF0222</option>
+                        <option value="PF0322">PF0322</option>
+                        <option value="PF0422">PF0422</option>
+                        <option value="PF0522">PF0522</option>
+                      </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">Số điện thoại 
+                </td>
+                <td class="rightCol"><input type="tel" name="tel">
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                </td>
+                <td class="rightCol"><button type="submit" class="submit" name="SubmitForm">Đăng ký</button>
+                <button type="reset" class="reset" name="ResetForm">Nhập lại</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

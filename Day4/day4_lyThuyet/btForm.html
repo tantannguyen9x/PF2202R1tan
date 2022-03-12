@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Demo tạo form </title>
+    <style>
+        #phone {
+            color: aqua;
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Form đăng ký</p>
+    <h2> Sở thích của bạn</h2>
+        <!-- Action là khi submit sẽ gửi đến trang nào-->
+    <form class="register_form" action="Register_form.php" method="post">
+        <p>Tỉnh/thành phố</p>
+        <input type="text" name="Province" placeholder="Nhập tỉnh thành">
+        <p>Địa chỉ email</p>
+        <input type="email" name="email" placeholder="Nhập email">
+        <p>How many</p>
+        <input type="radio" name="amount" value="1">1 - 10$ <br/>
+        <input type="radio" name="amount" value="2">2 - 30$ <br/>
+        <input type="radio" name="amount" value="3">3 - 50$ <br/>
+        <p>Full Name *</p>
+        <input type="text" name="Họ" placeholder="Nhập họ" required>
+        <input type="text" name="Ten" placeholder="Nhập Tên" required>
+        <p>Email</p>
+        <input type="email" name="email" placeholder="Nhập Email">
+        <p>Phone number</p>
+            <input type="number" id="phone" name="phone1" placeholder="0000" maxlength="4">
+            <p> - </p>
+            <input type="number" id="phone" name="phone2" placeholder="111" maxlength="3">
+            <p> - </p>
+            <input type="number" id="phone" name="phone3" placeholder="222" maxlength="3">
+        <br/>
+        <br/>
+        <input type="Submit" name="Submit">
+        <input type="reset" name="Reset">
+       
+</body>
+</html>
