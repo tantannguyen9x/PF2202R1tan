@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Tính lãi xuất ngân hàng</title>
+</head>
+<body>
+   <script>
+       let n = parseInt(prompt("Nhập số năm:"));
+       let m = parseInt(prompt("Nhập số tiền:"));
+       let rate = parseInt(prompt("Nhập lãi suất (đơn vị (%)):"))
+       let profit = m*rate/100;
+       let Total = m + n*profit;
+       document.write("Số tiền gửi: " + m +" VND" + "<br/>" + "<br/>");
+       document.write("Số năm gửi tiết kiệm: " + n + " Năm" + "<br/>" + "<br/>");
+       document.write("Tổng tiền khi tất toán lãi đơn: "+Total.toLocaleString('vi-VN', 
+         {
+        style: 'currency',  
+        currency: 'VND'
+        }));
+   </script>
+</body>
+</html>

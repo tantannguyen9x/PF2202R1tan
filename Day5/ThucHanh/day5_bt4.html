@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Tính chu vi và diện tích hình tròn</title>
+</head>
+<body>
+   <script>
+       let r = parseFloat(prompt("Nhập bán kính hình tròn: (cm)"));
+       let pi = 3.14
+       let C = Math.round(2*r*pi);
+       let S = Math.round(r*r*pi);
+       document.write("Chu vi đường tròn: "+C + " cm");
+       document.write("<br/>");
+       document.write("<br/>");
+       document.write("Diện tích hình tròn: "+S +" cm2");
+   </script>
+</body>
+</html>
