@@ -8,10 +8,14 @@
 </head>
 <body>
    <script>
-        let a = prompt("Hãy nhập Số bị chia: ")
-        let b = prompt("Hãy nhập số chia: ")
-        let c = a%b
-        alert(a + " chia " + b +" dư " + c)
+        let inputWidth;
+        let inputHeight;
+        inputWidth = prompt("Enter the width");
+        inputHeight = prompt("Enter the height");
+        let width = parseInt(inputWidth);
+        let height = parseInt(inputHeight);
+        let area = width * height;
+        document.write("The area is: " + area +" cm2");
    </script>
 </body>
 </html>
