@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>nhắc lại nội dung bài học </title>
+</head>
+<body>
+    <div>
+        <button id="clickMe">Click me</button>
+        <br/><br/>
+        <button onclick="showMessage()">Nội dung msg muốn show</button>
+    </div>
+    <script>
+        let clickMe = document.getElementById('clickMe');
+        clickMe.addEventListener('click',function() {  // Lắng nghe sự kiện thông qua hàm
+            console.log('show msg conten')
+        });
+    </script>
+</body>
+</html>

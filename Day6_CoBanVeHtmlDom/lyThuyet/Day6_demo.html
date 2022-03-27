@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Demo DOM</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="index-content">
+        <h2>Hello</h2>
+    </div>
+    <script>
+        // nếu get đối tượng là ID
+       // let indexContent = document.getElementById('index-content');
+       //console.log(indexContent);
+       // Nếu lấy theo class thì sẽ lấy được 1 mảng
+       // let container = document.getElementsByClassName('container');
+       // console.log(container);
+       let indexContent = document.getElementById('index-content');
+       console.log(indexContent.innerHTML); // lấy ra HTML của phần tử
+       indexContent.innerHTML = " this is change text"; // lấy ra text của phàn tử
+       // indexContent.innerText
+       indexContent.style.color = "red";
+       indexContent.style.backgroundColor = "blue";
+
+    </script>
+</body>
+</html>

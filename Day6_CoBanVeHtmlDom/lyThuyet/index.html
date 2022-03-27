@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Intro event</title>
+</head>
+<body>
+    <div class="container">
+        <button onclick="logTime()">Click me</button><br/><br/>
+        <button onclick="logName('this is a name')">Demo log name</button><br/><br/>
+        <button class="demoBtn" onclick="demoThis(this)">Demo this</button>
+        <button onclick="addElement()">Add element</button>
+        <div id="demo"></div>
+    </div>
+    <script>
+        // Log thời gian click button Click me
+        function logTime(){
+            let now = new Date();
+            console.log(now);
+        }
+        // Log name là 'this is a name'
+        function logName(name){
+            console.log(name);
+        }
+        // Demo this - show chính object đang check
+        function demoThis(obj){
+            console.log(obj);
+            obj.style.color = "red";
+        }
+        // Demo 
+        function addElement(){
+            let p = document.createElement('p');
+            p.innerText = 'This is add p tag';
+            document.getElementById('demo').appendChild(p);
+        }
+        // Demo cuối
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>add or delete an element</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="index-content">
+        <h2>
+            Hello wold
+        </h2>
+        <h3 id="h3">
+            Đây là thẻ H3
+        </h3>
+    </div>
+    <script>
+        // append là chèn xuống dưới nội dung
+        // prepend là chèn lên trên 
+        // Mục đích dùng trong việc cập nhật data trong màn hình list mà không cần re-load page
+        // tìm phần tử cần thay đổi
+        let indexContent = document.getElementById('index-content');
+        // tạo ra một phần tử mới với create với 1 thẻ được tạo trong createElement('Tên thẻ html')
+        let p = document.createElement('p');
+            p.innerText= "P tag";
+        let p2 = document.createElement('p'); // tạo ra thẻ H2
+            p2.innerText = "this is an added p tag";
+         // thêm phần tử vào thẻ H2 ở trên
+        // Nếu muốn tạo thẻ P trong thử H2 thì cần tạo thẻ p rồi add vào thẻ H2 rồi tạo 
+        p2.appendChild(p);
+        indexContent.prepend(p2); // Mục đích để thêm nội dung của thẻ p được tạo ở trên vào nội dung page
+        // Demo remove thẻ H3 ở trên
+        let h3 = document.getElementById('h3');
+        indexContent.removeChild(h3);
+    </script>
+</body>
+</html>
