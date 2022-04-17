@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm đại học khối D</title>
+    <style>
+        #header {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="header">Tính điểm đại học khối D</p>
+    <label>Điểm môn toán</label>
+    <input type="number" id="toan">
+    <br /><br />
+    <label>Điểm môn văn </label>
+    <input type="number" id="van">
+    <br /><br />
+    <label>Điểm môn anh </label>
+    <input type="number" id="anh" >
+    <br /><br />
+    <label>Khu vực</label>
+    <select name="kv" id="khuvuc" >
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2</option>
+        <option value="0.25">KV2-NT</option>
+        <option value="0">KV3</option>
+    </select>
+    <br /><br />
+    <button id="sum" onclick="total()" >Tính điểm</button>
+    <br /><br />
+    <p>Tổng điểm <span id="totalPoint"></span></p>
+</body>
+
+</html>
+<script>
+
+    function total() {
+        let a = parseInt(document.getElementById('toan').value);
+        console.log(a);
+        let b = parseInt(document.getElementById('van').value);
+        console.log(b);
+        let c = parseInt(document.getElementById('anh').value);
+        console.log(c);
+        let d = parseFloat(document.getElementById('khuvuc').value);
+        console.log(d);
+        let e = a + b + c * 2 + d;
+        console.log(e);
+        document.getElementById('totalPoint').innerText = e + " điểm";
+    }
+</script>

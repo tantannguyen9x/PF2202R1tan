@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Tính số ngày trong 1 tháng</title>
+
+</head>
+
+<body>
+    <input type="number" id="mon" onchange="countDays()">
+    <script>
+        function countDays() {
+            let count = document.getElementById('mon').value;
+            switch (mon) {
+                case 1:
+                    alert("tháng có 31 ngày");
+                    break;
+                case 4, 6, 9, 11:
+                    alert("tháng có 30 ngày");
+                    break;
+                default:
+                    alert("tháng có 2 có 29 hoặc 28 ngày");
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
