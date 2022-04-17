@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Ôn tập</title>
+</head>
+
+<body>
+
+    <script>
+        let arr1 = [
+            [1, 3, 5, 7, 9], // 0
+            [2, 4, 6, 8, 10], // 1
+            [1, 2, 3, 4, 5]  // 2
+        ]
+        for (let i = 0; i < arr1.length; i++) { // chay qua tat ca phan tu trog mang arr1
+            let line = ''; // tao dong moi
+            for (let j = 0; j < arr1[i].length; j++) { // chay qua tat ca phan tử dcua arr1[i]
+                line += arr1[i][j] + " "; // concat tat ca phan tu cua mot mang vao 1 dong
+            }
+            console.log(line); // in ra dong do
+        }
+    </script>
+
+</body>

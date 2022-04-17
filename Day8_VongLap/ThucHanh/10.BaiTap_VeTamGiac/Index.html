@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ Tam giác </title>
+</head>
+
+<body>
+    <p>Hãy nhập chiều cao tam giác 1</p>
+    <input type="number" id="numb1" onchange="draw1()">
+    <span id="tri1"></span>
+    <br />
+    <input type="number" id="numb2" onchange="draw2()">
+    <span id="tri2"></span>
+    <br />
+    <input type="number" id="numb3" onchange="draw3()">
+    <span id="tri3"></span>
+    <br />
+    <input type="number" id="numb4" onchange="draw4()">
+    <span id="tri4"></span>
+
+</body>
+
+</html>
+<script>
+    // tam giác 1
+    let value = parseInt(prompt("Hãy nhập chiều cao của hình tam giác 1:"));
+    for (let i = 0; i <= value; i++) {
+        for (j = 0; j <= i; j++) {
+            document.writeln("*")
+            console.log(j);
+        }
+        document.write("<br/>");
+    };
+    document.write("<br/>");
+
+
+    // tam giác 2
+    let value2 = parseInt(prompt("Hãy nhập chiều cao của hình tam giác 2:"));
+    for (let i = value2; i >= 0; i--) {
+        for (j = i; j >= 0; j--) {
+            document.writeln("*")
+            console.log(j);
+        }
+        document.write("<br/>");
+    };
+    document.write("<br/>");
+
+    // tam giác 3
+    function draw3 (){
+document.write("<p>")
+    let value3 = document.getElementById('numb3')
+    for (let i = 0; i <= value3; i++) {
+        for (j = 0; j <= i; j++) {
+            document.writeln("*")
+            console.log(j);
+        }
+        document.write("<br/>");
+    };
+    document.write("<br/>");
+}
+document.write("</p>")
+</script>

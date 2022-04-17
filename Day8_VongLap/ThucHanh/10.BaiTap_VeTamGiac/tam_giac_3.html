@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ Tam giác </title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    // tam giác 3
+// let value3 = parseInt(prompt("Hãy nhập số"))
+ document.write("<p>")
+        for (let i = 0; i <= 5; i++) {
+            for (j = 0; j <= i; j++) {
+                document.writeln("*")
+                console.log(j);
+            };
+            document.write("<br/>");
+        };
+        document.write("</p>") 
+
+        //bảng cửu chương
+    document.write("<table border='1px'width=50%>")
+    for (i = 1; i <= 9; i++) {
+        document.write("<tr>")
+        for (j = 2; j <=9; j++) {
+            let m = i * j;
+            document.write("<td>"+j + "x" + i + "=" + m+"</td>");
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>")
+</script>

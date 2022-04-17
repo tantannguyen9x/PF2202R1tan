@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Đổi từ độ F sang độ C</title>
+</head>
+
+<body>
+    <label> nhập nhiệt độ F</label>
+    <input type="number" id="Fah" onkeyup="convertToC(this.value)">
+    <br /> <br />
+    <p> <span id="result"></span>Độ C tương đương </p>
+    <script>
+        function convertToC(number) {
+            // console.log(number)
+            let result = (number - 32) / 1.8;
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

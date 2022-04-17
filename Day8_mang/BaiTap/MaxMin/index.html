@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm giá trị lớn nhất hoặc nhỏ nhất</title>
+
+</head>
+
+<body>
+    <script>
+        var array = [];
+        var quality = 10;
+        for (let i = 0; i < quality; i++) {
+            array.push([]);
+            for (let j = 0; j < quality; j++) {
+                element = parseInt(Math.random() * 1000);
+                array[i].push(element);
+            }
+        }
+        console.log(array);
+        let min = max = 0
+        for (let i = 0; i < quality; i++) {
+            for (let j = 0; j < quality; j++) {
+                if (min > array[i][j]) {
+                    min = array[i][j];
+                }
+                if (max < array[i][j]) {
+                    max = array[i][j];
+                }
+            }
+        }
+        console.log(min);
+        console.log(max);
+    </script>
+
+</body>
+
+</html>

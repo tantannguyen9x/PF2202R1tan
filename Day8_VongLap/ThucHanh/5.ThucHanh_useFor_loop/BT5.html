@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Sử dụng vòng lặp for</title>
+</head>
+
+<body>
+    <h2>JavaScript Loops</h2>
+    <p id="demo">aaaaa</p>
+    <script>
+        let text = "The number is <br/>";
+        let i;
+        for (i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br/>";
+        }
+        document.getElementById("demo").innerHTML = text;
+        console.log(text);
+    </script>
+</body>
+
+</html>

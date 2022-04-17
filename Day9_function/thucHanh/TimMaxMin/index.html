@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tìm giá trị lớn nhất của mảng</title>
+</head>
+
+<body>
+    <script>
+        let arr = [3, 5, 1, 6, 3, 8, 33, 22, 44, 66];
+        let arr2 = [-1, 5, 7, 9, 22, 44, 77, 40];
+        let arr3 = [11, 22, 44, 5, 7, 10, 0, 20];
+        let arr4 = [];
+        let arr5 = [1000]
+        function Min(array) {
+            let min = array[0]
+            if (array.length == 0) {
+                 return "dãy số không có giá trị"
+            }
+            else if (array.length == 1) {
+                return array[0];
+            }
+            else for (let i = 0; i < array.length; i++) {
+                if (min > array[i]) {
+                    min = array[i];
+                }
+            }
+            return min;
+        }
+        console.log(Min(arr));
+        console.log(Min(arr2));
+        console.log(Min(arr3));
+        console.log(Min(arr4));
+        console.log(Min(arr5));
+
+
+    </script>
+</body>
+
+</html>

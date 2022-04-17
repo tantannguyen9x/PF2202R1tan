@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        /* let sum = 0
+        for (let i = 1; i < 10; i++) {
+            sum += i;
+            console.log('sum from 1 to 10 is ' + sum)
+        }
+        let sum2 = 0
+        for (let i = 15; i < 30; i++) {
+            sum2 += i;
+            console.log('sum from 1 to 10 is ' + sum2)
+        }
+        let sum3 = 0
+        for (let i = 31; i < 55; i++) {
+            sum3 += i;
+            console.log('sum from 1 to 10 is ' + sum3)
+        } */
+
+        // gọn lại thì dùng hàm
+        /* function sumRange(from, to) {
+            let sumx = 0;
+            for (let i = from; i <= to; i++) {
+                sumx += i;
+            }
+            console.log('sum of ' + from + ' to ' + to +' is ' + sumx)
+        }
+        sumRange(1,50); */
+
+
+        function square(x) {
+            let f = x * x;
+            console.log(f)
+        }
+        square(10);
+
+
+        // chào + tên + tuổi
+        function showName(name, age) {
+            console.log("hello " + name + " you are " + age + " years old")
+        }
+        showName("Lan", 10);
+
+        // kiểm tra số chia hết cho 3
+        function isDivBy3(number) {
+            return number % 3 == 0
+        }
+        console.log(isDivBy3(90))
+    </script>
+</body>
+
+</html>
