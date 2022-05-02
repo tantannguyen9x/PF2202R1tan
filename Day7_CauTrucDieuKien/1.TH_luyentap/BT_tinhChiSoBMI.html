@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title> Tính chỉ số BMI </title>
+</head>
+
+<body>
+    <label>Chiều cao (m)</label>
+    <input type="number" id="height">
+    <br/>
+    <label>Cân nặng (kg)</label>
+    <input type="number" id="weight">
+    <br/><br/>
+    <button onclick="bmi()">Tính chỉ số BMI</button>
+    <br/>
+    <p>Kết quả tính chỉ số BMI</p>
+    <span id="result"></span>
+</body>
+
+</html>
+<script>
+    function bmi() {
+        let h = Number(document.getElementById('height').value);
+        console.log(h);
+        let w = Number(document.getElementById('weight').value);
+        console.log(w);
+        let bmi = w /Math.pow(h, 2);
+        console.log(bmi);
+        switch (true) {
+            case bmi < 16:
+            document.getElementById('result').innerText="Chỉ số BMI là "+bmi.toFixed(2)+" (gầy độ III)";
+                break;
+            case bmi >= 16 && bmi <17:
+            document.getElementById('result').innerText="Chỉ số BMI là "+bmi.toFixed(2)+" (Gầy độ II)";
+                break;
+            case bmi >= 17 && bmi <18.5:
+            document.getElementById('result').innerText="Chỉ số BMI là "+bmi.toFixed(2)+" (Gầy độ I)";
+                break;
+            case bmi >=18.5 && bmi <25:
+            document.getElementById('result').innerText="Chỉ số BMI là "+bmi.toFixed(2)+" (Bình thường)";
+                break;
+            case bmi >=25 && bmi <30:
+            document.getElementById('result').innerText="Chỉ số BMI là "+bmi.toFixed(2)+" (Thừa cân)";
+                break;
+            case bmi >=30 && bmi <35:
+            document.getElementById('result').innerText="Chỉ số BMI là "+bmi.toFixed(2)+" (Béo độ I)";
+                break;
+            case bmi >=35 && bmi <40:
+            document.getElementById('result').innerText="Chỉ số BMI là "+bmi.toFixed(2)+" (Béo độ II)"
+                break;
+            default:
+            document.getElementById('result').innerText="Chỉ số BMI là "+bmi.toFixed(2)+" (Béo phì độ III)";
+                break;
+        }
+    }
+</script>
