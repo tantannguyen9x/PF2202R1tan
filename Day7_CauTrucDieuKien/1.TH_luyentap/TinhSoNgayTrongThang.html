@@ -14,15 +14,19 @@
     <script>
         function countDays() {
             let count = document.getElementById('mon').value;
+            let mon = Number(count);
             switch (mon) {
-                case 1:
-                    alert("tháng có 31 ngày");
+                case 2:
+                    alert("tháng có 29 hoặc 28 ngày");
                     break;
-                case 4, 6, 9, 11:
+                case 4:
+                case 6:
+                case 9:
+                case 11:
                     alert("tháng có 30 ngày");
                     break;
                 default:
-                    alert("tháng có 2 có 29 hoặc 28 ngày");
+                    alert("tháng có 31 ngày");
                     break;
             }
         }
