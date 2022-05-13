@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Demo01</title>
+
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1000" height="900" style="border: 2px solid red;"></canvas>
+    <script>
+        const COLOR = ['#fff','000','999'];
+        var myCanvas = document.getElementById('myCanvas');
+        var ctx = myCanvas.getContext('2d');
+        for (let i = 0; i < 30; i++) {
+            var a = (Math.random() * 100).toFixed(0);
+            var b = (Math.random() * 100).toFixed(0);
+            var c = (Math.random() * 100).toFixed(0);
+            ctx.beginPath();
+            ctx.arc(a, b, c, 0, 2 * Math.PI);
+            let rd =(Math.random()*color.lenght).toFixed(0);
+            ctx.fillStyle = color.rd;
+            ctx.stroke()
+        }
+    </script>
+</body>
+
+</html>

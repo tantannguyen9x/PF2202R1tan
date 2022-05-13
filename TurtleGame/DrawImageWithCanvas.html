@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <title>Turtle game</title>
+
+</head>
+
+<body>
+    <div class="container pt-5 text-center">
+        <canvas id="gameCanvas" width="800" height="500" style="border: 2px solid black"></canvas>
+        <canvas id="Description" width="300" height="500" style="border: 2px solid black"></canvas>
+    </div>
+    <img id="turtle" src="image/turtle.png" alt="turtle" width="0" height="0">
+    <script>
+        
+        // Vẽ frame
+        let mainFrame = document.getElementById('gameCanvas');
+        let gameContext = mainFrame.getContext("2d");
+        window.onload = function () {
+            var c = document.getElementById("gameCanvas");
+            var ctx = c.getContext("2d");
+           var img = document.getElementById("turtle");
+            ctx.drawImage(img, 10, 450,50,50);
+        };
+
+
+    </script>
+</body>
+
+</html>

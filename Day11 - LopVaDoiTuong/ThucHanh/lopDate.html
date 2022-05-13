@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Lớp hình ngày</title>
+
+</head>
+
+<body>
+    <script>
+        class Date {
+            constructor(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay() {
+                return this.day;
+            }
+            getMonth() {
+                return this.month = month;
+            }
+            getYear() {
+                return this.year = year;
+            }
+            setDay(day) {
+                this.day = day;
+            }
+            setMonth(month) {
+                this.month = month;
+            }
+            setYear(year) {
+                this.year = year;
+            }
+        }
+        let date = new Date(13, 5, 2022);
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getYear();
+        console.log(day);
+        console.log(year);
+       // alert(day + '-' + month + '-' + year);
+
+    </script>
+</body>
+
+</html>

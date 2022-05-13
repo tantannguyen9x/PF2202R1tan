@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng với 1 số bất kỳ</title>
+</head>
+
+<body>
+    <p>Hãy nhập 1 số bất kỳ</p>
+    <input type="number" id="inputNumber" onkeyup="sum()">
+    <p id="display"></p>
+</body>
+
+</html>
+<script>
+    let result=0;
+    function sum() {
+        let number = Number(document.getElementById('inputNumber').value);
+        console.log(number);
+        for (let i=1; i <= number; i+=1) {
+            if (number > 0) {
+                result = result+ number;
+                document.getElementById('display').innerHTML= "Tổng là "+ result
+            }
+        }
+    }
+    
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Demo01</title>
+
+</head>
+
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border: 2px solid red;"></canvas>
+
+    <canvas id="myCanvas2" width="200" height="100" style="border: 2px solid red;"></canvas>
+
+    <canvas id="myCanvas3" width="200" height="100" style="border: 2px solid red;"></canvas>
+    <br /><br />
+
+    <canvas id="myCanvas4" width="400" height="300" style="border: 2px solid wheat;"></canvas>
+    <script>
+        // canvas 1
+        let canvas = document.getElementById('myCanvas');
+        let ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(95, 50, 50, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        // canvas 2
+        let canvas2 = document.getElementById('myCanvas2');
+        let ctx2 = canvas2.getContext('2d');
+        ctx2.fillStyle = "#FF0000";
+        ctx2.fillRect(0, 0, 150, 75);
+
+        // canvas 3
+        let canvas3 = document.getElementById('myCanvas3');
+        let ctx3 = canvas3.getContext('2d');
+        ctx3.font = "30px Arial";
+        ctx3.fillText("Hello World", 10, 50);
+
+
+        // vẽ tranh hoàng hôn
+        let canvas4 = document.getElementById('myCanvas4');
+        let ctx4 = canvas4.getContext('2d');
+        let grd = ctx4.createLinearGradient(0, 200, 0, 0);
+        ctx4.beginPath();
+        grd.addColorStop(0, 'red')
+        grd.addColorStop(0.4, 'orange');
+        grd.addColorStop(1, "yellow")
+        ctx4.fillStyle = grd;
+        ctx4.fillRect(0, 0, 600, 400);
+        ctx4.stroke();
+
+        // mặt trời
+        ctx4.beginPath();
+        ctx4.arc(200, 100, 50, 0, 2 * Math.PI);
+        // ctx4.fillStyle = 'orange'
+        ctx4.stroke();
+        
+    </script>
+</body>
+
+</html>

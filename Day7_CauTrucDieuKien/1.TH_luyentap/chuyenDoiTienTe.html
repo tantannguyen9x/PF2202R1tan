@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+
+<body>
+    <table width="30%">
+        <tr>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+            <td>
+                <button>Convert</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="amount" onchange="change()">
+            </td>
+            <td>
+                <select name="fromCurrency" id="fromCurrency" onchange="change()">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                    <option value="yen">Yen</option>
+                    <option value="cny">CNY</option>
+                </select>
+            </td>
+            <td>
+                <select name="toCurrency" id="toCurrency" onchange="change()">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                    <option value="yen">Yen</option>
+                    <option value="cny">CNY</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <span id="result"></span>
+</body>
+
+</html>
+<script>
+function change() {
+    
+}
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <title>Ball game</title>
+    <script src="main.js"></script>
+    <script src="/assets/js/turtle.js"></script>
+</head>
+
+<body>
+    <div class="container pt-5 text-center">
+        <canvas id="gameCanvas" width="800" height="500" style="border: 2px solid black"></canvas>
+        <canvas id="Description" width="300" height="500" style="border: 2px solid black"></canvas>
+    </div>
+    <script>
+        // Vẽ frame
+        let mainFrame = document.getElementById('gameCanvas');
+        let gameContext = mainFrame.getContext("2d");
+        let isGameOver = false;
+
+        // Khai báo vị trí đối tượng gồm paddle và ball
+        // paddle attrs
+        let paddleCurrentX = mainFrame.width / 2 - 50;
+        let paddleCurrentY = mainFrame.height - 45;
+        let paddle = new Rect(paddleCurrentX, paddleCurrentY, 100, 20, "#e372ba");
+
+        // ball attributes
+        let ballCurrentX = mainFrame.width / 2;
+        let ballCurrentY = mainFrame.height - 70;
+        let ball = new Circle(ballCurrentX, ballCurrentY, 10, '#ff3203');
+
+        document.addEventListener('keyup', function (e) {
+            // srace 32
+            if (e.keyCode !== null) {
+                console.log(e)
+            }
+        })
+
+        play();
+    </script>
+</body>
+
+</html>

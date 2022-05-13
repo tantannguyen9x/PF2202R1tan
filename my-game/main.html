@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <title>Ball and bricks</title>
+    <style>
+        #playGame {
+            width: 100px;
+            height: 50px;
+            position: fixed;
+            left: 250px;
+            top: 650px;
+            border-radius: 20px;
+        }
+
+        body {
+            background-image: url("image/bg.png");
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+
+<body>
+    </br>
+    <p style="color: #ffffff; text-align: center; font-size: x-large;"><span id="sumPoint">Cùng chơi nào !</span></p>
+    <iframe src="mp3/music.mp3" allow="autoplay" style="display:none"></iframe>
+    <div class="container pt-5 text-center">
+        <canvas id="gameCanvas" width="500" height="500" style="border: 1px solid black"></canvas>
+        <canvas id="description" width="500" height="500" style="border: 1px solid black"></canvas>
+    </div>
+    <input type="image" src="image/btn.png" id="playGame" onclick="play()" />
+</body>
+<script src="main.js"></script>
+<script src="assets/js/Circle.js"></script>
+<script src="assets/js/Rect.js"></script>
+<script src="assets/js/bricks.js"></script>
+<script>
+
+    let mainFrame = document.getElementById('gameCanvas');
+    let gameContext = mainFrame.getContext("2d");
+    let isGameOver = false;
+    let isEndGame = false;
+    let point = 0;
+    // paddle attrs
+    let paddleCurrentX = mainFrame.width / 2 - 50;
+    let paddleCurrentY = mainFrame.height - 45;
+    let paddle = new Rect(paddleCurrentX, paddleCurrentY, 100, 20, "#ff0000");
+
+    // ball attributes
+    let ballCurrentX = mainFrame.width / 2;
+    let ballCurrentY = mainFrame.height - 70;
+    let ball = new Circle(ballCurrentX, ballCurrentY, 10, '#0000FF');
+
+    // bricks attributes
+    var bricksTemplate = [
+        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+
+    /* var bricksTemplate = [
+        [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+        [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+        [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+        [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+    ]; */
+    let bricks = [];
+    let bricksRemain = 0
+    for (let i = 0; i < bricksTemplate.length; i++) {
+        bricks[i] = [];
+        for (let j = 0; j < bricksTemplate[i].length; j++) {
+            if (bricksTemplate[i][j] === 1) {
+                bricks[i][j] = new Brick(j * 40 + 20, i * 40 + 10, 50, 15, '#ff0000');
+                bricksRemain++;
+            }
+        }
+
+    }
+    // Tô màu cho nền
+    function drawMain() {
+        gameContext.fillStyle = '#F8E0E0';
+        gameContext.fillRect(0, 0, 500, 500);
+    }
+
+    // draw bricks
+    function drawBricks() {
+        for (let i = 0; i < bricks.length; i++) {
+            for (let j = 0; j < bricks[i].length; j++) {
+                let brick = bricks[i][j]
+                if (brick != null) {
+                    gameContext.beginPath();
+                    gameContext.rect(brick.getX(), brick.getY(), brick.getWidth(), brick.getHeight());
+                    gameContext.fillStyle = brick.getColor();
+                    gameContext.fill();
+                    gameContext.closePath();
+                }
+
+            }
+
+        }
+
+    }
+
+    // draw the paddle 
+    function drawPaddle() {
+        gameContext.beginPath();
+        gameContext.rect(paddle.getX(), paddle.getY(), paddle.getWidth(), paddle.getHeight());
+        gameContext.fillStyle = paddle.getColor();
+        gameContext.fill();
+        gameContext.closePath();
+    }
+    // draw ball
+    function drawBall() {
+        gameContext.beginPath();
+        gameContext.arc(ball.getX(), ball.getY(), ball.getRadius(), 0, Math.PI * 2);
+        gameContext.fillStyle = ball.getColor();
+        gameContext.fill();
+        gameContext.closePath();
+    }
+
+
+    function updatePaddlePosition() {
+        // xu ly su kien di chuyen cua paddle
+        if (paddle.isMovingToLeft()) {
+            paddle.toLeft();
+        } else if (paddle.isMovingToRight()) {
+            paddle.toRight();
+        }
+
+        // paddle cham 2 ben 
+        if (paddle.getX() < 0) {
+            paddle.x = 0;
+        } else if (paddle.getX() > mainFrame.width - paddle.getWidth()) {
+            paddle.x = mainFrame.width - paddle.getWidth();
+        }
+    }
+
+    // update vị trí ball
+    function updateBallPosition() {
+        if (ball.getX() < ball.getRadius() || ball.getX() > mainFrame.width - ball.getRadius()) {
+            ball.reversePositionX();
+        }
+        if (ball.getY() < ball.getRadius()) {
+            ball.reversePositionY();
+        }
+        ball.move();
+    }
+    // check vị trí va chạm với paddle
+    function handleBallCollisionPaddle() {
+        // check vị trí phía trên
+        if (ball.getX() + ball.getRadius() >= paddle.getX() // ball ở điểm đầu bên trái
+            && ball.getX() + ball.getRadius() <= paddle.getX() + paddle.getWidth() // ball ở điểm cuối bên phải
+            && ball.getY() + ball.getRadius() >= mainFrame.height - paddle.getHeight() - 25) {
+            ball.reversePositionY();
+        }
+    }
+
+    // check vị trí va chạm với brick
+    function handleBallCollisionBrick() {
+        for (let i = 0; i < bricks.length; i++) {
+            for (let j = 0; j < bricks[i].length; j++) {
+                if (bricks[i][j] != null) {
+                    if (ball.getX() - ball.getRadius() >= bricks[i][j].getX() + bricks[i][j].getHeight() // check vị trí va chạm
+                        && ball.getX() - ball.getRadius() <= bricks[i][j].getX() + bricks[i][j].getHeight() + bricks[i][j].getWidth()
+                        && ball.getY() - ball.getRadius() <= bricks[i][j].getY() + bricks[i][j].getHeight()) {
+                        ball.reversePositionY();
+                        point = point + 10; // Tính điểm
+                        bricks[i][j] = null; // set vị trí bricks đã va chạm thành null
+                        bricksRemain--; // count số gạch còn lại
+                        document.getElementById('sumPoint').innerText = 'Được ' + point + ' điểm rồi, cố lên !!'; // show điểm
+                        if (bricksRemain === 0) {
+                            setTimeout(() => {
+                                alert('Oa, chúc mừng! Bạn đã thắng rồi !!!')
+                            }, 30);
+                        };
+                    }
+                }
+            }
+        }
+    }
+    function drawDefault() {
+        drawMain();
+        drawPaddle();
+        drawBall();
+        drawBricks();
+    }
+    drawDefault()
+    // Main function
+    function play() {
+        if (!isGameOver) {
+            gameContext.clearRect(0, 0, mainFrame.width, mainFrame.height); // clear vị trí trước đó của ball và paddle
+            drawMain()
+            drawPaddle();
+            drawBall();
+            drawBricks();
+            updatePaddlePosition();
+            handleBallCollisionPaddle();
+            handleBallCollisionBrick();
+            updateBallPosition();
+            if (ball.getY() + ball.getRadius() >= mainFrame.height) {
+                isGameOver = true;
+            }
+            requestAnimationFrame(play);
+        } else {
+            alert("End game !!! Điểm của bạn là: " + point);
+        }
+
+    }
+
+    // thao tác với keycap
+    document.addEventListener('keydown', function (e) {
+        if (e.keyCode == 37 || e.keyCode == 65) { // dùng phím mũi tên sang trái hoặc a để trang trái
+            paddle.moveLeft();
+        } else if (e.keyCode == 39 || e.keyCode == 68) { // dùng phím mũi tên sang phải hoặc d để trang phải
+            paddle.moveRight();
+        }
+    })
+
+    document.addEventListener('keyup', function (e) {
+        if (e.keyCode == 37 || e.keyCode == 65) {
+            paddle.stop();
+        } else if (e.keyCode == 39 || e.keyCode == 68) {
+            paddle.stop();
+        }
+    })
+    // Mô tả cách chơi
+    let des = document.getElementById('description');
+    let ctx = des.getContext("2d");
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = "40px Georgia";
+    ctx.fillText("Cách chơi", 10, 70);
+    ctx.font = "20px Georgia"
+    ctx.fillText("Click nút Play Game để bắt đầu", 10, 120);
+    ctx.fillText("Dùng nút mũi tên sang trái, phải để di chuyển paddle", 10, 150);
+    ctx.fillText("Khi bóng chạm vào paddle sẽ quay trở lại", 10, 180);
+    ctx.fillText("Khi bóng chạm vào cạnh dưới sẽ kết thúc Game", 10, 210);
+    ctx.fillText("Bạn sẽ chiến thắc khi đập được hết các viên gạch", 10, 240);
+
+</script>
+
+</html>

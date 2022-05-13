@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Tính năm âm lịch từ năm dương lịch</title>
+
+</head>
+
+<body>
+    <input type='number' id='year' onchange="changeToLunarYear()" placeholder="Hãy nhập năm dương lịch"
+        style="min-width:200px;">
+    <span id="lunarYear"></span>
+    <script>
+        function changeToLunarYear() {
+            let year = Number(document.getElementById('year').value);
+            console.log(year);
+            let can = year % 10;
+            console.log(can);
+            switch (can) {
+                case 0:
+                    return "Canh"
+                    break;
+                default:
+                    return
+                    break;
+            }
+            console.log(can);
+            //            document.getElementById('lunarYear').innerText="Năm Âm lịch tương ứng là " + result;
+        }
+    </script>
+</body>
+
+</html>
