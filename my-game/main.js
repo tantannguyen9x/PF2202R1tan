@@ -129,6 +129,7 @@ function handleBallCollisionBrick() {
                         setTimeout(() => {
                             alert('Oa, chúc mừng! Bạn đã thắng rồi !!!')
                         }, 30);
+                        canvas.pause();
                     };
                 }
             }
