@@ -15,6 +15,7 @@ function play() {
         drawPaddle();
         drawBall();
         drawBricks();
+        playSound();
         updatePaddlePosition();
         handleBallCollisionPaddle();
         handleBallCollisionBrick();
@@ -76,6 +77,11 @@ function drawBall() {
     gameContext.fill();
     gameContext.closePath();
 }
+// play music
+function playSound() {
+    var sound = document.getElementById("audio");
+    sound.play();
+}
 
 function updatePaddlePosition() {
     // xu ly su kien di chuyen cua paddle
@@ -127,7 +133,7 @@ function handleBallCollisionBrick() {
                     document.getElementById('sumPoint').innerText = 'Được ' + point + ' điểm rồi, cố lên !!'; // show điểm
                     if (bricksRemain === 0) {
                         setTimeout(() => {
-                            alert('Oa, chúc mừng! Bạn đã thắng rồi !!!')
+                            alert('Wow, chúc mừng! Bạn đã thắng rồi !!!')
                         }, 30);
                         canvas.pause();
                     };

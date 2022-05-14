@@ -11,10 +11,8 @@
         #playGame {
             width: 100px;
             height: 50px;
-            position: fixed;
-            left: 400px;
-            top: 650px;
             border-radius: 20px;
+            margin-top: 20px;
         }
 
         body {
@@ -27,12 +25,17 @@
 <body>
     </br>
     <p style="color: #ffffff; text-align: center; font-size: x-large;"><span id="sumPoint">Cùng chơi nào !</span></p>
-    <iframe src="mp3/music.mp3" allow="autoplay" style="display:none"></iframe>
-    <div class="container pt-5 text-center">
-        <canvas id="gameCanvas" width="500" height="500" style="border: 1px solid black"></canvas>
-        <canvas id="description" width="500" height="500" style="border: 1px solid black"></canvas>
+    <div style="display:none"><audio id="audio" src="mp3/music.mp3"></audio>
     </div>
-    <input type="image" src="image/btn.png" id="playGame" onclick="play()" />
+    </audio>
+    <div class="container pt-5 text-center d-flex justify-content-center">
+        <div style="display: flex; align-items: center; flex-direction: column;">
+            <canvas id="gameCanvas" width="500" height="500" style="border: 1px solid black"></canvas>
+            <input type="image" src="image/btn.png" id="playGame" onclick="play()" />
+        </div>
+        <canvas id="description" width="500" height="500" style="border: 1px solid black"></canvas>
+
+    </div>
 </body>
 <script src="main.js"></script>
 <script src="assets/js/Circle.js"></script>
@@ -43,9 +46,8 @@
     let gameContext = mainFrame.getContext("2d");
     let des = document.getElementById('description');
     let ctx = des.getContext("2d");
-    
+
     let isGameOver = false;
-    let isEndGame = false;
     let point = 0;
     // paddle
     let paddleCurrentX = mainFrame.width / 2 - 50;
@@ -57,17 +59,17 @@
     let ballCurrentY = mainFrame.height - 70;
     let ball = new Circle(ballCurrentX, ballCurrentY, 10, '#0000FF');
 
-    // bricks
-    let bricksTemplate = [
+    // draw bricks
+    /* let bricksTemplate = [
         [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]; */
 
-    /* var bricksTemplate = [
+    var bricksTemplate = [
         [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
         [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
         [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
         [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
-    ]; */
+    ];
     let bricks = [];
     let bricksRemain = 0
     for (let i = 0; i < bricksTemplate.length; i++) {
